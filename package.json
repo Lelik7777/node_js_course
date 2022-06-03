@@ -2,7 +2,7 @@
   "name": "node_js",
   "version": "1.0.0",
   "description": "project by ulbi TV course of node.js",
-  "main": "test.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,8 +12,14 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
   "bugs": {
     "url": "https://github.com/Lelik7777/node_js_course/issues"
   },
-  "homepage": "https://github.com/Lelik7777/node_js_course#readme"
+  "homepage": "https://github.com/Lelik7777/node_js_course#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
 }
