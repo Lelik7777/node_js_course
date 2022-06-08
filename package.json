@@ -4,7 +4,8 @@
   "description": "project by ulbi TV course of node.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./lessons/process.js"
   },
   "repository": {
     "type": "git",
@@ -13,6 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1"
   },
   "bugs": {
