@@ -1,8 +1,10 @@
 const os = require('os');
 //позволяет однопоточной ноде реализовать возможности многоядрных систем,запуская дочерние процессы
 const cluster = require('cluster');
-//console.log(os.platform())
-//console.log(os.cpus().length)
+console.log('system:',os.platform())
+console.log('cpu',os.arch())
+console.log(os.cpus().length)
+console.log('*****************************************************************')
 //проверка главный ли процесс
 if (cluster.isMaster) {
     for (let i = 0; i < os.cpus().length - 2; i++) {

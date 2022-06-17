@@ -10,9 +10,9 @@ emitter.on('message', (data, second, third) => {
 })
 emitter.emit('message1', 'hsadf');
 emitter.emit('message2', 'asdf');
-// const MESSAGE=process.env.message||'';
-// if(MESSAGE){
-//     emitter.emit('message',MESSAGE,1234)// генерация события,если сообщение не пустое
-// }else {
-//     emitter.emit('message','You don`t create message')
-// }
+const MESSAGE=process.env.message||'';
+if(MESSAGE){
+    emitter.emit('message',MESSAGE,1234)// генерация события,если сообщение не пустое
+}else {
+    emitter.emit('message','You don`t create message')
+}

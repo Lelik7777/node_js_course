@@ -1,0 +1,1 @@
+console.log('%chello: ','color:green;font-weight:bold',3444)
