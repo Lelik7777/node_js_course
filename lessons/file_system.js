@@ -28,13 +28,21 @@ fs.writeFile(path.resolve(__dirname, 'test.txt'), 'hello,world 777', (err) => {
         throw err;
     }
 })
+fs.writeFile(path.resolve(__dirname,'./dir/text00.text'),`${new Date().getDate()}`,(err)=>{
+    if(err){
+        throw  err;
+    }
+})
+fs.writeFile(path.resolve(__dirname,'./dir/dir2/text001.text'),`${new Date()}`,(err)=>{
+    if(err) throw err;
+});
 //чтобы дописать что-то в файл
 // fs.appendFile(path.resolve(__dirname,'test.txt'),'new added text',(err)=>{
 //     if(err)
 //     throw err;
 // })
 // использование промисов,чтобы писать читабильный код,когда у нас могут ф-ции вкладываться друг в друга
-const writeFile = async (path, data) => {
+export const writeFile = async (path, data) => {
     return new Promise((res, rej) => fs.writeFile(path, data, (err) => {
         if (err) {
             return rej(err.message);
@@ -53,7 +61,7 @@ const appendText = async (path, data) => {
 
 
 // ф-ция для считывания файла
-const readFileAsync = async (path) => {
+export const readFileAsync = async (path) => {
     return new Promise((res, rej) => fs.readFile(path, {encoding: 'utf-8'}, (err, data) => {
         if (err) {
             return rej(err.message);
@@ -67,7 +75,7 @@ writeFile(path.resolve(__dirname, 'test_02'), 'this file was created today')
     .then(() => readFileAsync(path.resolve(__dirname, 'test_02.text'))).then(data => console.log(data))
     .catch(err => console.log(err))
 // function for remove file
-const removeFile = (path) => new Promise((res,rej)=>fs.rm(path,(err)=>{
+export const removeFile = (path) => new Promise((res,rej)=>fs.rm(path,(err)=>{
     if(err) return rej(err.message);
     res();
 }));
@@ -78,3 +86,10 @@ writeFile(path.resolve(__dirname,'text_00'),text)
     .then().then(data=>data.split('').length)
     .then(count=>writeFile(path.resolve(__dirname,'count.text'),`count of words = ${count}`))
     .then(()=>removeFile(path.resolve(__dirname,'text_00')))
+
+const text2=process.env.TEXT2||'';
+writeFile(path.resolve(__dirname,'newText.text'),text2)
+    .then(()=>readFileAsync(path.resolve(__dirname,'newText.text')))
+    .then(data=>data.split('').length).then(data=>writeFile(path.resolve(__dirname,'count002.text'),data))
+    .then(()=>removeFile(path.resolve(__dirname,'newText.text')))
+    .catch(err=>err.message)
