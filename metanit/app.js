@@ -15,3 +15,8 @@ const greeting=require('./greeting');
 console.log('date of request: ',greeting.date)
 //получение доступа к ф-ции getMessage from module greeting
 console.log(greeting.getMessage(userName));
+const User=require('./user');
+const alex=new User('alex',45);
+console.log(alex);
+alex.sayHi();
+alex.displayInfo();
