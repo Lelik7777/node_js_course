@@ -22,3 +22,4 @@ if (Math.random() > 0.5) {
     console.log('execution of program finish');
     process.exit();
 }
+console.log(process)
