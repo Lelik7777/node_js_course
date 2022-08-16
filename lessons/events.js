@@ -1,5 +1,6 @@
 //events позволяет генерировать события, подписываться на них
 //поскольку events это класс,то создаем класс генератор===Emitter
+
 const Emitter = require('events');
 const emitter = new Emitter();
 // create custom event
