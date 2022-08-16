@@ -11,3 +11,7 @@ let userName=os.userInfo().username;
 console.log(userName);
 //подключения модуля greeting
 const greeting=require('./greeting');
+//получение доступа к переменной date from module greeting
+console.log('date of request: ',greeting.date)
+//получение доступа к ф-ции getMessage from module greeting
+console.log(greeting.getMessage(userName));
