@@ -5,6 +5,7 @@ http.createServer(function (request,response) {
 }).listen(3000,'127.0.0.1',function () {
     console.log('server began listening requests on 3000 port');
 });
+
 const os=require('os');
 //get data about user of this system, so about me
 let userName=os.userInfo().username;
@@ -20,3 +21,5 @@ const alex=new User('alex',45);
 console.log(alex);
 alex.sayHi();
 alex.displayInfo();
+const showName=require('npm-package');
+console.log(showName('bob'));
