@@ -29,10 +29,17 @@ name='bob';
 console.log(name);
 
 // принимаю из папки welcome
-const {getMessEvening,user,num,getMessMorning,data}=require('./welcome');
+const {getMessEvening,user,num,getMessMorning,data,message}=require('./welcome');
 getMessMorning();
 getMessEvening();
 console.dir(user);
 console.log(user);
 console.log(num);
 console.log(data);
+console.log(message);
+//здесь я вытаскиваю из папки по умолчанию, а это файл index.js
+const{index}=require('./test');
+
+//здесь же я прописываю полный путь и уже вытаскиваю из конкретного файла
+console.log(index);
+const {test1}=require('./test/test1');
