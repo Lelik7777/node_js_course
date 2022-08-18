@@ -11,5 +11,5 @@ module.exports.getMessage = (name) => {
         return 'good day, ' + name;
     } else return 'good morning, ' + name;
 }
-
+module.exports.name='Alice';
 

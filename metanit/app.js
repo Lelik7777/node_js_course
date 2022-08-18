@@ -11,15 +11,28 @@ const os=require('os');
 let userName=os.userInfo().username;
 console.log(userName);
 //подключения модуля greeting
-const greeting=require('./greeting');
+let {date,name,getMessage}=require('./greeting');
 //получение доступа к переменной date from module greeting
-console.log('date of request: ',greeting.date)
+console.log('date of request: ',date)
 //получение доступа к ф-ции getMessage from module greeting
-console.log(greeting.getMessage(userName));
+console.log(getMessage(userName));
+
 const User=require('./user');
-const alex=new User('alex',45);
+const alex=new User(userName,45);
 console.log(alex);
 alex.sayHi();
 alex.displayInfo();
-const showName=require('npm-package');
+const {showName}=require('npm-package');
 console.log(showName('bob'));
+console.log('name from greeting: ',name);
+name='bob';
+console.log(name);
+
+// принимаю из папки welcome
+const {getMessEvening,user,num,getMessMorning,data}=require('./welcome');
+getMessMorning();
+getMessEvening();
+console.dir(user);
+console.log(user);
+console.log(num);
+console.log(data);
