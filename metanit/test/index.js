@@ -2,6 +2,7 @@
 // по умолчанию это index.js
 
 
+
 module.exports={
     index:{name:'index.js',type:'js'}
 };

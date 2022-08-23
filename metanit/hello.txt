@@ -1,0 +1,2 @@
+hi my new friend
+new text in file hello.txt

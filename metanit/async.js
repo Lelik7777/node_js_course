@@ -5,7 +5,7 @@ function display(data, callback) {
     const error = random > 6 ? new Error('error because random >6') : null;
     setTimeout(function () {
        callback(error,data);
-    });
+    },0);
 }
 
 console.log('program start');
@@ -13,4 +13,4 @@ display('some data for calculation',(er,data)=>{
    if(er) throw er;
     console.log(data);
 });
-console.log('program edn');
+console.log('program end');
