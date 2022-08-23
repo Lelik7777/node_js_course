@@ -13,6 +13,7 @@ console.log(userName);
 //подключения модуля greeting
 let {date,name,getMessage}=require('./greeting');
 //получение доступа к переменной date from module greeting
+
 console.log('date of request: ',date)
 //получение доступа к ф-ции getMessage from module greeting
 console.log(getMessage(userName));

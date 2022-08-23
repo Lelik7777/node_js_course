@@ -2,7 +2,7 @@ console.log('greeting module');
 //создание переменной date,доступ к которой можно получить в другом файле через require, а далее nameModule.date
 let currentDate = new Date();
 module.exports.date = currentDate;
-
+global.dateGlobal=currentDate;
 module.exports.getMessage = (name) => {
     let hour = currentDate.getHours();
     if (hour > 16) {
